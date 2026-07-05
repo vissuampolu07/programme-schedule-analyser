@@ -1,0 +1,21 @@
+Task ID,Task,Workstream,RAG,Critical,% Complete
+T01,Programme mobilisation & governance setup,PMO,Green,True,100.0
+T02,Current-state process mapping,Business Analysis,Green,True,100.0
+T03,Requirements gathering workshops,Business Analysis,Red,True,90.0
+T04,Solution design & architecture,Technical,Green,True,60.0
+T05,Data migration strategy,Data,Amber,False,80.0
+T06,Design sign-off,PMO,Green,True,0.0
+T07,Environment provisioning,Technical,Green,False,100.0
+T08,Core system configuration,Technical,Green,False,10.0
+T09,Data cleansing & mapping,Data,Amber,False,40.0
+T10,Integration development,Technical,Green,True,15.0
+T11,Trial data migration,Data,Green,False,0.0
+T12,System integration testing,Testing,Green,True,0.0
+T13,User acceptance testing,Testing,Green,True,0.0
+T14,UAT sign-off,PMO,Green,True,0.0
+T15,Training material development,Change,Green,False,30.0
+T16,End-user training delivery,Change,Green,True,0.0
+T17,Cutover planning,PMO,Green,False,0.0
+T18,Go-live readiness review,PMO,Green,True,0.0
+T19,Production cutover & go-live,Technical,Green,True,0.0
+T20,Hypercare support,All,Green,True,0.0

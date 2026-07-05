@@ -1,0 +1,21 @@
+task_id,task_name,workstream,owner,duration_days,dependencies,percent_complete,is_milestone
+T01,Programme mobilisation & governance setup,PMO,A. Khan,10,,100,0
+T02,Current-state process mapping,Business Analysis,S. Patel,15,T01,100,0
+T03,Requirements gathering workshops,Business Analysis,S. Patel,20,T02,90,0
+T04,Solution design & architecture,Technical,J. Okafor,25,T03,60,0
+T05,Data migration strategy,Data,M. Rossi,15,T02,80,0
+T06,Design sign-off,PMO,A. Khan,0,T04,0,1
+T07,Environment provisioning,Technical,J. Okafor,10,T01,100,0
+T08,Core system configuration,Technical,L. Chen,30,T06;T07,10,0
+T09,Data cleansing & mapping,Data,M. Rossi,25,T05,40,0
+T10,Integration development,Technical,L. Chen,35,T06,15,0
+T11,Trial data migration,Data,M. Rossi,10,T08;T09,0,0
+T12,System integration testing,Testing,R. Adams,20,T08;T10,0,0
+T13,User acceptance testing,Testing,R. Adams,15,T11;T12,0,0
+T14,UAT sign-off,PMO,A. Khan,0,T13,0,1
+T15,Training material development,Change,K. Nowak,20,T04,30,0
+T16,End-user training delivery,Change,K. Nowak,15,T14;T15,0,0
+T17,Cutover planning,PMO,A. Khan,10,T12,0,0
+T18,Go-live readiness review,PMO,A. Khan,0,T16;T17,0,1
+T19,Production cutover & go-live,Technical,J. Okafor,5,T18,0,0
+T20,Hypercare support,All,Team,20,T19,0,0
