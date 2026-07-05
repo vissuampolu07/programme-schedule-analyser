@@ -4,7 +4,7 @@ A Python tool that applies the **Critical Path Method (CPM)** to a programme pla
 
 Built to demonstrate practical programme planning and PMO analytics skills — schedule logic, dependency management, float analysis, and executive status reporting — using an example **ERP transformation programme** plan.
 
-![Gantt chart with critical path](output/gantt_critical_path.png)
+![Gantt chart with critical path](gantt_critical_path.png)
 
 ## What it does
 
@@ -39,24 +39,24 @@ RED items requiring escalation:
 
 | RAG by workstream | Milestone tracker |
 | --- | --- |
-| ![RAG summary](output/rag_by_workstream.png) | ![Milestones](output/milestone_tracker.png) |
+| ![RAG summary](rag_by_workstream.png) | ![Milestones](milestone_tracker.png) |
 
 ## How to run
 
 ```bash
 pip install -r requirements.txt
-python src/main.py
+python main.py
 ```
 
 Optional arguments:
 
 ```bash
-python src/main.py --schedule data/programme_schedule.csv \
-                   --start 2026-06-01 \
-                   --today 2026-07-27
+python main.py --schedule programme_schedule.csv \
+                --start 2026-06-01 \
+                --today 2026-07-27
 ```
 
-Swap in your own plan by editing `data/programme_schedule.csv`. Dependencies are semicolon-separated task IDs (e.g. `T08;T09`), and milestones are zero-duration tasks flagged with `is_milestone = 1`.
+Swap in your own plan by editing `programme_schedule.csv`. Dependencies are semicolon-separated task IDs (e.g. `T08;T09`), and milestones are zero-duration tasks flagged with `is_milestone = 1`.
 
 ## Why these techniques matter in a PMO
 
@@ -67,19 +67,21 @@ Swap in your own plan by editing `data/programme_schedule.csv`. Dependencies are
 ## Project structure
 
 ```
-├── data/
-│   └── programme_schedule.csv    # Example ERP transformation plan (20 tasks)
-├── src/
-│   ├── cpm.py                    # CPM engine: validation, forward/backward pass, float
-│   ├── dashboard.py              # RAG logic + chart generation
-│   └── main.py                   # CLI entry point
-├── output/                       # Generated charts and CSV reports
-└── requirements.txt
+├── main.py                       # CLI entry point
+├── cpm.py                        # CPM engine: validation, forward/backward pass, float
+├── dashboard.py                  # RAG logic + chart generation
+├── programme_schedule.csv        # Example ERP transformation plan (20 tasks)
+├── requirements.txt
+├── gantt_critical_path.png       # Generated: Gantt chart with critical path
+├── rag_by_workstream.png         # Generated: RAG summary by workstream
+├── milestone_tracker.png         # Generated: milestone tracker timeline
+├── schedule_analysis.csv         # Generated: full schedule analysis table
+└── rag_status.csv                # Generated: RAG status table
 ```
 
 ## Tech
 
-Python · pandas · matplotlib — no scheduling libraries used; the CPM algorithm (topological sort, forward/backward pass, float computation) is implemented from scratch in `src/cpm.py`.
+Python · pandas · matplotlib — no scheduling libraries used; the CPM algorithm (topological sort, forward/backward pass, float computation) is implemented from scratch in `cpm.py`.
 
 ## Roadmap
 
